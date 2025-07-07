@@ -6,12 +6,27 @@
   <title>My Portfolio – Neeju Singh</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #fdfdfd;
+      --text-color: #222;
+      --secondary-color: #555;
+      --accent-color: #0066cc;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --secondary-color: #aaa;
+      --accent-color: #66aaff;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: #fdfdfd;
-      color: #222;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .container {
@@ -28,28 +43,28 @@
 
     p.intro {
       font-size: 1.2em;
-      color: #555;
+      color: var(--secondary-color);
       margin-bottom: 2.5em;
     }
 
     .project {
       margin-bottom: 40px;
-      border-left: 4px solid #444;
+      border-left: 4px solid var(--text-color);
       padding-left: 20px;
     }
 
     .project h2 {
       margin: 0;
       font-size: 1.5em;
-      color: #111;
+      color: var(--text-color);
     }
 
     .project p {
-      color: #444;
+      color: var(--secondary-color);
     }
 
     .project a {
-      color: #0066cc;
+      color: var(--accent-color);
       text-decoration: none;
       font-weight: bold;
     }
@@ -68,51 +83,90 @@
     }
 
     .skills p {
-      color: #444;
+      color: var(--secondary-color);
     }
 
     footer {
       margin-top: 60px;
       font-size: 0.9em;
-      color: #aaa;
+      color: var(--secondary-color);
       text-align: center;
+    }
+
+    #top-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 2px solid var(--text-color);
+      color: var(--text-color);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
     }
   </style>
 </head>
 <body>
+  <button id="theme-toggle">Toggle Theme</button>
+
   <div class="container">
     <h1>My Work</h1>
     <p class="intro">A selection of projects I've built — combining technology, creativity, and mindfulness.</p>
 
     <div class="project">
-      <h2>AI-Powered Student Success Predictor</h2>
-      <p>Built a predictive tool using Python and Streamlit to identify students at academic risk based on historical data.</p>
-      <p><strong>Tools:</strong> Python, Pandas, Streamlit, Scikit-learn</p>
-      <p><a href="#">View on GitHub</a></p>
+      <h2>Intro to Game Development</h2>
+      <p>Developed an interactive learning module for high school students to build a Space Invader game using Pygame. This project was part of an educational outreach effort to introduce young learners to game development and problem-solving.</p>
+      <p><strong>Tools:</strong> Python, Pygame, GitHub Pages</p>
+      <p><a href="https://github.com/NEEJUSINGH/Intro-to-Game-Development" target="_blank">View on GitHub</a></p>
     </div>
 
     <div class="project">
-      <h2>Study+ Android App</h2>
-      <p>A phone-locking app designed to help students stay focused during study time, with emergency access features for parents.</p>
-      <p><strong>Tools:</strong> Java, Android Studio, Firebase</p>
-      <p><a href="#">Read the Case Study</a></p>
-    </div>
-
-    <div class="project">
-      <h2>Game Dev Module for Teens</h2>
-      <p>Designed and taught an intro game development module using Python and Pygame to middle and high school students.</p>
-      <p><strong>Tools:</strong> Python, Pygame, GitHub Pages, Curriculum Design</p>
-      <p><a href="#">See Project Page</a></p>
+      <h2>Student Success Predictor</h2>
+      <p>Machine learning-based tool designed to identify students who may be at risk of failing a course. Uses early indicators such as login frequency, assignment submissions, and discussion participation to support early intervention.</p>
+      <p><strong>Tools:</strong> Python (pandas, scikit-learn), Streamlit, GitHub, Docker (optional)</p>
+      <p><a href="#">Project Overview</a></p>
     </div>
 
     <div class="skills">
       <h3>Skills & Tools</h3>
-      <p>Python, Streamlit, Scikit-learn, Android, Firebase, Tableau, Power BI, HTML/CSS, Git, GitHub, Teaching & Mentorship</p>
+      <p>Python, Streamlit, Scikit-learn, Android, Firebase, Tableau, Power BI, HTML/CSS, Git, GitHub, Mentorship, Educational Design</p>
     </div>
 
     <footer>
       <p>© 2025 Neeju Singh • <a href="/">Back to Home</a></p>
     </footer>
   </div>
+
+  <button id="top-button" onclick="scrollToTop()">↑ Back to Top</button>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute(
+        'data-theme',
+        currentTheme === 'dark' ? 'light' : 'dark'
+      );
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
