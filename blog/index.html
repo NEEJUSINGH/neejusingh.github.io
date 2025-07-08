@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unfolding Consciousness – Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #222;
+      --accent-color: #5c6bc0;
+      --muted-color: #666;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --accent-color: #90caf9;
+      --muted-color: #aaa;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      padding: 60px 20px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8em;
+      margin-bottom: 0.2em;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: var(--muted-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .post-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .post-item {
+      margin-bottom: 30px;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 16px;
+    }
+
+    .post-item h2 {
+      margin: 0;
+      font-size: 1.4em;
+    }
+
+    .post-item a {
+      text-decoration: none;
+      color: var(--accent-color);
+    }
+
+    .post-item a:hover {
+      text-decoration: underline;
+    }
+
+    .post-date {
+      font-size: 0.9em;
+      color: var(--muted-color);
+      margin-top: 4px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      margin: 60px 0 30px;
+      color: var(--muted-color);
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 2px solid var(--text-color);
+      color: var(--text-color);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <button id="theme-toggle">Toggle Theme</button>
+
+  <header>
+    <h1>Unfolding Consciousness</h1>
+    <p>A weekly blog exploring mind, awareness, manifestation, and the deeper dimensions of being.</p>
+  </header>
+
+  <main>
+    <ul class="post-list">
+      <li class="post-item">
+        <h2><a href="week1-who-am-i.html">Who Am I? – Week 1</a></h2>
+        <div class="post-date">July 7, 2025</div>
+      </li>
+      <li class="post-item">
+        <h2><a href="#">Week 2 Placeholder</a></h2>
+        <div class="post-date">Coming Soon</div>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>© 2025 Neeju Singh • <a href="/">Back to Home</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
